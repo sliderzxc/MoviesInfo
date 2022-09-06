@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
-import com.test.movieapplication.adapter.FilmsPagingAdapter
+import com.test.movieapplication.paging.FilmsPagingAdapter
 import com.test.movieapplication.adapter.FooterAdapter
 import com.test.movieapplication.app.App
 import com.test.movieapplication.databinding.FragmentMainBinding

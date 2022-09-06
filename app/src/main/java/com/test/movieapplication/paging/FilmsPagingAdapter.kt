@@ -1,4 +1,4 @@
-package com.test.movieapplication.adapter
+package com.test.movieapplication.paging
 
 import com.test.movieapplication.model.*
 import android.view.LayoutInflater
@@ -22,7 +22,9 @@ class DiffUtilsPaging : DiffUtil.ItemCallback<Result>() {
     }
 }
 
-class FilmsPagingAdapter : PagingDataAdapter<Result, FilmsPagingAdapter.FilmsPagingViewHolder>(DiffUtilsPaging()) {
+class FilmsPagingAdapter : PagingDataAdapter<Result, FilmsPagingAdapter.FilmsPagingViewHolder>(
+    DiffUtilsPaging()
+) {
 
     class FilmsPagingViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val binding by lazy { ItemFilmBinding.bind(item) }

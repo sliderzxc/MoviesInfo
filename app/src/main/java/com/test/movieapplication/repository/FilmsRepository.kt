@@ -6,7 +6,7 @@ import com.test.movieapplication.utils.Language
 import retrofit2.Response
 
 class FilmsRepository(
-    private val api: FilmApi
+    private val filmsApi: FilmApi
 ) {
 
     suspend fun getAllFilms(
@@ -14,7 +14,7 @@ class FilmsRepository(
         language: Language,
         page: Int
     ) : Response<MainModel> {
-        return api.getAllFilms(
+        return filmsApi.getAllFilms(
             apiKey = apiKey,
             language = language,
             page = page

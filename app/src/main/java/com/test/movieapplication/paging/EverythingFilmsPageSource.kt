@@ -1,21 +1,21 @@
-package com.test.movieapplication.network.paging
+package com.test.movieapplication.paging
 
 import com.test.movieapplication.model.*
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.test.movieapplication.network.api.FilmApi
+import com.test.movieapplication.repository.FilmsRepository
 import com.test.movieapplication.utils.Constants.API_KEY
 import com.test.movieapplication.utils.Language
 import java.lang.Exception
 
 class EverythingFilmsPageSource(
-    private val filmApi: FilmApi
+    private val filmsRepository: FilmsRepository
 ) : PagingSource<Int, Result>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Result> {
         try {
             val page = params.key ?: 1
-            val repoResponse = filmApi.getAllFilms(
+            val repoResponse = filmsRepository.getAllFilms(
                 apiKey = API_KEY,
                 language = Language.RU,
                 page = page
