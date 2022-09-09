@@ -1,11 +1,11 @@
 package com.test.movieapplication.paging
 
-import com.test.movieapplication.model.*
+import com.test.movieapplication.network.model.*
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.test.movieapplication.repository.FilmsRepository
-import com.test.movieapplication.utils.Constants.API_KEY
-import com.test.movieapplication.utils.Language
+import com.test.movieapplication.network.repository.FilmsRepository
+import com.test.movieapplication.utils.other.Constants.API_KEY
+import com.test.movieapplication.utils.other.Language
 import java.lang.Exception
 
 class EverythingFilmsPageSource(

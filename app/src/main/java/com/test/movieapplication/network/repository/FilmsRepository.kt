@@ -1,8 +1,8 @@
-package com.test.movieapplication.repository
+package com.test.movieapplication.network.repository
 
-import com.test.movieapplication.model.MainModel
+import com.test.movieapplication.network.model.MainModel
 import com.test.movieapplication.network.api.FilmApi
-import com.test.movieapplication.utils.Language
+import com.test.movieapplication.utils.other.Language
 import retrofit2.Response
 
 class FilmsRepository(

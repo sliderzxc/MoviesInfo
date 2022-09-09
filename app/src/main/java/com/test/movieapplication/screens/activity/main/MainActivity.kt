@@ -1,4 +1,4 @@
-package com.test.movieapplication.screens.activity
+package com.test.movieapplication.screens.activity.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

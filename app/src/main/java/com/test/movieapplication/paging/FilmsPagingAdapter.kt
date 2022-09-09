@@ -1,6 +1,6 @@
 package com.test.movieapplication.paging
 
-import com.test.movieapplication.model.*
+import com.test.movieapplication.network.model.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.test.movieapplication.R
 import com.test.movieapplication.databinding.ItemFilmBinding
-import com.test.movieapplication.utils.Constants.IMAGE_BASE_URL
+import com.test.movieapplication.utils.other.Constants.IMAGE_BASE_URL
 
 class DiffUtilsPaging : DiffUtil.ItemCallback<Result>() {
     override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
@@ -22,21 +22,24 @@ class DiffUtilsPaging : DiffUtil.ItemCallback<Result>() {
     }
 }
 
-class FilmsPagingAdapter : PagingDataAdapter<Result, FilmsPagingAdapter.FilmsPagingViewHolder>(
+class FilmsPagingAdapter(
+    private val onClickItem: (Result) -> Unit
+) : PagingDataAdapter<Result, FilmsPagingAdapter.FilmsPagingViewHolder>(
     DiffUtilsPaging()
 ) {
 
     class FilmsPagingViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val binding by lazy { ItemFilmBinding.bind(item) }
-        fun bind(resultData: Result) {
+        fun bind(resultData: Result, onClickItem: () -> Unit) {
             binding.title.text = resultData.title
             binding.date.text = resultData.release_date
             Glide.with(binding.root).load("${IMAGE_BASE_URL}${resultData.poster_path}").into(binding.image)
+            binding.root.setOnClickListener { onClickItem() }
         }
     }
 
     override fun onBindViewHolder(holder: FilmsPagingViewHolder, position: Int) {
-        holder.bind(getItem(position)!!)
+        holder.bind(getItem(position)!!) { getItem(position)?.let { onClickItem(it) } }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmsPagingViewHolder {

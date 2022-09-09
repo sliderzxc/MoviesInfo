@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/mainItem"
+        android:title="Main"
+        android:icon="@drawable/icon_main"/>
+
+    <item
+        android:id="@+id/favoriteItem"
+        android:title="Favorite"
+        android:icon="@drawable/icon_favorite"/>
+
+</menu>

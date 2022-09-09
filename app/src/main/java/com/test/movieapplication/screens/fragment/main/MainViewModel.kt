@@ -6,7 +6,7 @@ import androidx.paging.cachedIn
 import com.test.movieapplication.paging.FilmsRepositoryPaging
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(
+class MainViewModel(
     filmRepositoryPaging: FilmsRepositoryPaging
 ) : ViewModel() {
 

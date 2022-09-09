@@ -1,24 +1,19 @@
-package com.test.movieapplication.di
+package com.test.movieapplication.di.modules
 
-import android.content.Context
 import com.test.movieapplication.network.api.FilmApi
 import com.test.movieapplication.paging.FilmsRepositoryPaging
-import com.test.movieapplication.repository.FilmsRepository
-import com.test.movieapplication.screens.fragment.main.MainViewModelFactory
-import com.test.movieapplication.utils.Constants.BASE_URL
+import com.test.movieapplication.network.repository.FilmsRepository
+import com.test.movieapplication.utils.other.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
-class AppModule(private val context: Context) {
+class AppModule {
 
-    @Provides
-    fun provideContext() : Context {
-        return context
-    }
-
+    @Singleton
     @Provides
     fun provideFilmsRepositoryPaging(
         filmsRepository: FilmsRepository
@@ -27,6 +22,7 @@ class AppModule(private val context: Context) {
     }
 
     @Provides
+    @Singleton
     fun provideFilmApi(): FilmApi {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -39,19 +35,11 @@ class AppModule(private val context: Context) {
     }
 
     @Provides
+    @Singleton
     fun provideFilmsRepository(
         filmsApi: FilmApi
     ) : FilmsRepository {
         return FilmsRepository(filmsApi = filmsApi)
-    }
-
-    @Provides
-    fun provideViewModelFactory(
-        filmsRepositoryPaging: FilmsRepositoryPaging
-    ) : MainViewModelFactory {
-        return MainViewModelFactory(
-            filmsRepositoryPaging = filmsRepositoryPaging
-        )
     }
 
 }

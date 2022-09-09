@@ -1,16 +1,21 @@
 package com.test.movieapplication.app
 
 import android.app.Application
-import com.test.movieapplication.di.AppComponent
-import com.test.movieapplication.di.AppModule
-import com.test.movieapplication.di.DaggerAppComponent
+import com.test.movieapplication.di.component.AppComponent
+import com.test.movieapplication.di.component.DaggerAppComponent
+import com.test.movieapplication.di.modules.AppModule
+import com.test.movieapplication.di.modules.ViewModelModule
 
 class App : Application() {
     lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.builder().appModule(AppModule(this)).build()
+        appComponent = DaggerAppComponent
+            .builder()
+            .appModule(AppModule())
+            .viewModelModule(ViewModelModule())
+            .build()
     }
 
 }

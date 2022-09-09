@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/layout/activity_main.xml" value="0.23697916666666666" />
+        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/drawable/icon_back.xml" value="0.157" />
+        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/drawable/icon_favorite.xml" value="0.157" />
+        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/drawable/icon_main.xml" value="0.157" />
+        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/layout/footer_item.xml" value="0.24947916666666667" />
+        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/layout/fragment_details.xml" value="0.264" />
+        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/layout/fragment_favorite.xml" value="0.264" />
+        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/layout/fragment_image.xml" value="0.264" />
         <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/layout/fragment_main.xml" value="0.23697916666666666" />
         <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/layout/item_film.xml" value="0.25052083333333336" />
+        <entry key="..\:/Programming/AndroidStudioProjects/ImportantProjects/MovieApplication/app/src/main/res/menu/bottom_menu.xml" value="0.24947916666666667" />
       </map>
     </option>
   </component>

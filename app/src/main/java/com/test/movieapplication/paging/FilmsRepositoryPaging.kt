@@ -3,8 +3,8 @@ package com.test.movieapplication.paging
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
-import com.test.movieapplication.repository.FilmsRepository
-import com.test.movieapplication.utils.Constants.MAX_PAGE_SIZE
+import com.test.movieapplication.network.repository.FilmsRepository
+import com.test.movieapplication.utils.other.Constants.MAX_PAGE_SIZE
 import javax.inject.Inject
 
 class FilmsRepositoryPaging @Inject constructor(

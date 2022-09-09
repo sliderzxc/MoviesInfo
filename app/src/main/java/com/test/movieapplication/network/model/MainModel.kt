@@ -1,4 +1,4 @@
-package com.test.movieapplication.model
+package com.test.movieapplication.network.model
 
 data class MainModel(
     val page: Int,
