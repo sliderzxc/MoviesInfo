@@ -18,7 +18,6 @@ fun Result.toResultDatabaseModel() : ResultDatabaseModel {
         title = this.title,
         video = this.video,
         vote_average = this.vote_average,
-        vote_count = this.vote_count,
-        isFavorite = false
+        vote_count = this.vote_count
     )
 }

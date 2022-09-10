@@ -18,6 +18,5 @@ data class Result(
     val title: String,
     val video: Boolean,
     val vote_average: Double,
-    val vote_count: Int,
-    var isFavorite: Boolean = false
+    val vote_count: Int
 ) : Parcelable

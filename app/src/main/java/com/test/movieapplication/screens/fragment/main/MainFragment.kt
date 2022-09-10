@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -18,6 +19,7 @@ import com.test.movieapplication.network.model.Result
 import com.test.movieapplication.screens.fragment.favorite.FavoriteFragment
 import com.test.movieapplication.utils.help.changeFragment
 import com.test.movieapplication.utils.viewmodel.SharedViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -80,6 +82,4 @@ class MainFragment : Fragment() {
             }
         }
     }
-
-
 }
