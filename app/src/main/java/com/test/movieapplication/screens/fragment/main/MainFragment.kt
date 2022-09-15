@@ -1,25 +1,23 @@
 package com.test.movieapplication.screens.fragment.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.test.movieapplication.R
-import com.test.movieapplication.paging.FilmsPagingAdapter
 import com.test.movieapplication.adapter.FooterAdapter
 import com.test.movieapplication.app.App
 import com.test.movieapplication.databinding.FragmentMainBinding
 import com.test.movieapplication.network.model.Result
+import com.test.movieapplication.paging.FilmsPagingAdapter
 import com.test.movieapplication.screens.fragment.favorite.FavoriteFragment
 import com.test.movieapplication.utils.help.changeFragment
 import com.test.movieapplication.utils.viewmodel.SharedViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -67,7 +65,7 @@ class MainFragment : Fragment() {
 
     private fun goToDetailsFragment(result: Result) {
         sharedViewModel.changeResult(result)
-        val direction = MainFragmentDirections.actionFromMainFragmentToDetailsFragment(result)
+        val direction = MainFragmentDirections.actionFromMainFragmentToDetailsFragment()
         findNavController().navigate(direction)
     }
 

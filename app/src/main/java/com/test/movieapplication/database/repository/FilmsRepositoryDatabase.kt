@@ -5,10 +5,12 @@ import com.test.movieapplication.database.model.ResultDatabaseModel
 
 interface FilmsRepositoryDatabase {
 
-    fun insertToFavoriteTable(resultDatabaseModel: ResultDatabaseModel)
+    suspend fun insertToFavoriteTable(resultDatabaseModel: ResultDatabaseModel)
 
-    fun deleteFromFavoriteTable(resultDatabaseModel: ResultDatabaseModel)
+    suspend fun deleteFromFavoriteTable(resultDatabaseModel: ResultDatabaseModel)
 
-    fun getAllPopular() : LiveData<List<ResultDatabaseModel>>
+    fun getAllFavoriteFilms() : LiveData<List<ResultDatabaseModel>>
+
+    suspend fun isExistFilmInDatabase(id: Int) : Int
 
 }

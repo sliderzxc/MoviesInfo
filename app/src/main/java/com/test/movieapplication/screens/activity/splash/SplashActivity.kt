@@ -2,10 +2,9 @@ package com.test.movieapplication.screens.activity.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.test.movieapplication.R
 import com.test.movieapplication.databinding.ActivitySplashBinding
 import com.test.movieapplication.screens.activity.main.MainActivity
 import kotlinx.coroutines.delay
@@ -20,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         lifecycleScope.launch {
-            delay(2500)
+            delay(2000)
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             finish()
         }

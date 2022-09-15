@@ -7,7 +7,8 @@ import androidx.room.RoomDatabase
 import com.test.movieapplication.database.dao.FilmsDaoDatabase
 import com.test.movieapplication.database.model.ResultDatabaseModel
 
-@Database(entities = [ResultDatabaseModel::class], version = 1)
+
+@Database(entities = [ResultDatabaseModel::class], version = 3, exportSchema = false)
 abstract class FilmsDatabase : RoomDatabase(){
     abstract fun getToDoDao() : FilmsDaoDatabase
 

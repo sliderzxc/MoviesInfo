@@ -9,11 +9,14 @@ import com.test.movieapplication.database.model.ResultDatabaseModel
 interface FilmsDaoDatabase {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertToFavoriteTable(resultDatabaseModel: ResultDatabaseModel)
+    suspend fun insertToFavoriteTable(resultDatabaseModel: ResultDatabaseModel)
 
     @Delete
-    fun deleteFromFavoriteTable(resultDatabaseModel: ResultDatabaseModel)
+    suspend fun deleteFromFavoriteTable(resultDatabaseModel: ResultDatabaseModel)
 
     @Query("SELECT * FROM favorite_table")
     fun getAllPopular() : LiveData<List<ResultDatabaseModel>>
+
+    @Query("SELECT EXISTS(SELECT * FROM favorite_table WHERE id = :arg0 LIMIT 1)")
+    suspend fun isExistFilmInDatabase(arg0: Int): Int
 }

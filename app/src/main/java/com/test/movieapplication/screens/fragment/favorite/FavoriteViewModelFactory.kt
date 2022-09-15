@@ -1,14 +1,16 @@
-package com.test.movieapplication.screens.fragment.details
+package com.test.movieapplication.screens.fragment.favorite
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.test.movieapplication.database.repository.FilmsRepositoryDatabase
 import javax.inject.Inject
 
-class DetailsViewModelFactory @Inject constructor(
+class FavoriteViewModelFactory @Inject constructor(
     val filmsRepositoryDatabase: FilmsRepositoryDatabase
-    ) : ViewModelProvider.Factory {
+) : ViewModelProvider.Factory {
+
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return DetailsViewModel(filmsRepositoryDatabase = filmsRepositoryDatabase) as T
+        return FavoriteViewModel(filmsRepositoryDatabase = filmsRepositoryDatabase) as T
     }
+
 }

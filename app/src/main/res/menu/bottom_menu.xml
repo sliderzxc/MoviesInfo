@@ -4,12 +4,12 @@
 
     <item
         android:id="@+id/mainItem"
-        android:title="Main"
+        android:title="@string/main"
         android:icon="@drawable/icon_main"/>
 
     <item
         android:id="@+id/favoriteItem"
-        android:title="Favorite"
+        android:title="@string/favorite"
         android:icon="@drawable/icon_favorite"/>
 
 </menu>

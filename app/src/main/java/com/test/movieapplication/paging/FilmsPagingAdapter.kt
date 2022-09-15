@@ -1,6 +1,5 @@
 package com.test.movieapplication.paging
 
-import com.test.movieapplication.network.model.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.test.movieapplication.R
 import com.test.movieapplication.databinding.ItemFilmBinding
+import com.test.movieapplication.network.model.Result
 import com.test.movieapplication.utils.other.Constants.IMAGE_BASE_URL
 
 class DiffUtilsPaging : DiffUtil.ItemCallback<Result>() {
@@ -30,10 +30,10 @@ class FilmsPagingAdapter(
 
     class FilmsPagingViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val binding by lazy { ItemFilmBinding.bind(item) }
-        fun bind(resultData: Result, onClickItem: () -> Unit) {
-            binding.title.text = resultData.title
-            binding.date.text = resultData.release_date
-            Glide.with(binding.root).load("${IMAGE_BASE_URL}${resultData.poster_path}").into(binding.image)
+        fun bind(result: Result, onClickItem: () -> Unit) {
+            binding.title.text = result.title
+            binding.date.text = result.release_date
+            Glide.with(binding.root).load("${IMAGE_BASE_URL}${result.poster_path}").into(binding.image)
             binding.root.setOnClickListener { onClickItem() }
         }
     }

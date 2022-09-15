@@ -1,12 +1,9 @@
 package com.test.movieapplication.paging
 
-import com.test.movieapplication.network.model.*
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.test.movieapplication.network.model.Result
 import com.test.movieapplication.network.repository.FilmsRepository
-import com.test.movieapplication.utils.other.Constants.API_KEY
-import com.test.movieapplication.utils.other.Language
-import java.lang.Exception
 
 class EverythingFilmsPageSource(
     private val filmsRepository: FilmsRepository
@@ -15,11 +12,7 @@ class EverythingFilmsPageSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Result> {
         try {
             val page = params.key ?: 1
-            val repoResponse = filmsRepository.getAllFilms(
-                apiKey = API_KEY,
-                language = Language.RU,
-                page = page
-            )
+            val repoResponse = filmsRepository.getAllFilms(page = page)
             if (repoResponse.isSuccessful) {
                 val films = repoResponse.body()?.results
                 val prevKey = if (page > 1) page - 1 else null
