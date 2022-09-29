@@ -3,4 +3,10 @@
     <string name="favorite_movies_fragment_is_empty">You don\'t have favorite movies</string>
     <string name="main">Main</string>
     <string name="favorite">Favorite</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="example_date">Example Date</string>
+    <string name="example_title">Example Title</string>
+    <string name="example_vote">Example Vote</string>
+    <string name="retry">Retry</string>
 </resources>

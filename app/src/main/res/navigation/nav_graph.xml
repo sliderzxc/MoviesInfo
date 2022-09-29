@@ -18,8 +18,11 @@
             app:popEnterAnim="@anim/pop_enter_anim"
             app:popExitAnim="@anim/pop_exit_anim" />
         <action
-            android:id="@+id/action_mainFragment_to_favoriteFragment"
+            android:id="@+id/actionFromMainFragmentToFavoriteFragment"
             app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/actionFromMainFragmentToSettingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
     <fragment
@@ -28,13 +31,13 @@
         tools:layout="@layout/fragment_details"
         android:label="DetailsFragment" >
         <action
-            android:id="@+id/action_detailsFragment_to_mainFragment"
+            android:id="@+id/actionFromDetailsFragmentToMainFragment"
             app:destination="@id/mainFragment" />
         <action
             android:id="@+id/actionFromDetailsFragmentToImageFragment"
             app:destination="@id/imageFragment" />
         <action
-            android:id="@+id/action_detailsFragment_to_favoriteFragment"
+            android:id="@+id/actionFromDetailsFragmentToFavoriteFragment"
             app:destination="@id/favoriteFragment" />
     </fragment>
 
@@ -51,8 +54,11 @@
             app:popEnterAnim="@anim/pop_enter_anim"
             app:popExitAnim="@anim/pop_exit_anim" />
         <action
-            android:id="@+id/action_favoriteFragment_to_mainFragment"
+            android:id="@+id/actionFavoriteFragmentToMainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/actionFavoriteFragmentToSettingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
     <fragment
@@ -61,9 +67,23 @@
         android:label="ImageFragment"
         tools:layout="@layout/fragment_image" >
         <action
-            android:id="@+id/action_imageFragment_to_detailsFragment"
+            android:id="@+id/actionFromImageFragmentToDetailsFragment"
             app:destination="@id/detailsFragment"
             app:popUpTo="@id/detailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.test.movieapplication.screens.fragment.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/actionFromFavoriteFragmentToSettingsFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/actionFromSeetingsFragmentToMainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
 
 </navigation>

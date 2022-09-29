@@ -16,9 +16,9 @@ import com.test.movieapplication.app.App
 import com.test.movieapplication.databinding.FragmentDetailsBinding
 import com.test.movieapplication.network.model.Result
 import com.test.movieapplication.utils.mapper.toResultDatabaseModel
-import com.test.movieapplication.utils.other.Constants
 import com.test.movieapplication.utils.other.IsExist
-import com.test.movieapplication.utils.viewmodel.SharedViewModel
+import com.test.movieapplication.utils.other.MainConstants
+import com.test.movieapplication.utils.viewmodel.shared.SharedViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -29,7 +29,6 @@ class DetailsFragment : Fragment() {
 
     @Inject
     lateinit var detailsViewModelFactory: DetailsViewModelFactory
-
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private val detailsViewModel: DetailsViewModel by activityViewModels { detailsViewModelFactory }
 
@@ -63,31 +62,34 @@ class DetailsFragment : Fragment() {
         binding.dateStatus.text = result.release_date
         binding.textVote.text = result.vote_average.toString()
         Glide.with(binding.root)
-            .load("${Constants.IMAGE_BASE_URL}${result.poster_path}")
+            .load("${MainConstants.IMAGE_BASE_URL}${result.poster_path}")
             .into(binding.posterImage)
         Glide.with(binding.root)
-            .load("${Constants.IMAGE_BASE_URL}${result.backdrop_path}")
+            .load("${MainConstants.IMAGE_BASE_URL}${result.backdrop_path}")
             .into(binding.imageBackdrop)
     }
 
     private fun isFilmExistInDatabase() {
         sharedViewModel.result.value?.id?.let { id ->
             lifecycleScope.launch {
-                val isExist = detailsViewModel.isFilmsExistInDatabase(id)
-                if (isExist == IsExist.EXIST) {
-                    withContext(Dispatchers.Main) {
-                        binding.btnAddFilmToFavorite.setImageDrawable(
-                            context?.let { context -> ContextCompat.getDrawable(context, R.drawable.icon_like) }
-                        )
-                        detailsViewModel.changeStateIsChecked(true)
+                when (detailsViewModel.isFilmsExistInDatabase(id)) {
+                    IsExist.EXIST -> {
+                        withContext(Dispatchers.Main) {
+                            binding.btnAddFilmToFavorite.setImageDrawable(
+                                context?.let { context -> ContextCompat.getDrawable(context, R.drawable.icon_like) }
+                            )
+                            detailsViewModel.changeStateIsChecked(true)
+                        }
                     }
-                } else if (isExist == IsExist.NOT_EXIST){
-                    withContext(Dispatchers.Main) {
-                        binding.btnAddFilmToFavorite.setImageDrawable(
-                            context?.let { context -> ContextCompat.getDrawable(context, R.drawable.icon_unlike) }
-                        )
-                        detailsViewModel.changeStateIsChecked(false)
+                    IsExist.NOT_EXIST -> {
+                        withContext(Dispatchers.Main) {
+                            binding.btnAddFilmToFavorite.setImageDrawable(
+                                context?.let { context -> ContextCompat.getDrawable(context, R.drawable.icon_unlike) }
+                            )
+                            detailsViewModel.changeStateIsChecked(false)
+                        }
                     }
+                    IsExist.NONE -> { throw Exception("None in Details Fragmentw") }
                 }
             }
         }

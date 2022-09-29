@@ -14,14 +14,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MovieApplication"
-        tools:targetApi="31">
+        android:theme="@style/Theme.MovieApplication.Main"
+        tools:targetApi="33">
 
         <activity
             android:name=".screens.activity.splash.SplashActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.MovieApplication">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -30,9 +29,8 @@
 
         <activity
             android:name=".screens.activity.main.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.MovieApplication"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
 
     </application>
 

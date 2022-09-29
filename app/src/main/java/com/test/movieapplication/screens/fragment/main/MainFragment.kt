@@ -14,10 +14,11 @@ import com.test.movieapplication.adapter.FooterAdapter
 import com.test.movieapplication.app.App
 import com.test.movieapplication.databinding.FragmentMainBinding
 import com.test.movieapplication.network.model.Result
-import com.test.movieapplication.paging.FilmsPagingAdapter
+import com.test.movieapplication.paging.adapter.FilmsPagingAdapter
 import com.test.movieapplication.screens.fragment.favorite.FavoriteFragment
+import com.test.movieapplication.screens.fragment.settings.SettingsFragment
 import com.test.movieapplication.utils.help.changeFragment
-import com.test.movieapplication.utils.viewmodel.SharedViewModel
+import com.test.movieapplication.utils.viewmodel.shared.SharedViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -74,6 +75,10 @@ class MainFragment : Fragment() {
             when(it.itemId) {
                 R.id.favoriteItem -> {
                     parentFragmentManager.changeFragment(FavoriteFragment())
+                    true
+                }
+                R.id.settingsItem -> {
+                    parentFragmentManager.changeFragment(SettingsFragment())
                     true
                 }
                 else -> true

@@ -1,6 +1,5 @@
 package com.test.movieapplication.screens.fragment.details
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -34,14 +33,16 @@ class DetailsViewModel(
     }
 
     suspend fun isFilmsExistInDatabase(id: Int): IsExist {
-        val result = filmsRepositoryDatabase.isExistFilmInDatabase(id)
-        Log.d("MyLog", result.toString())
-        return if (result == 1) {
-            IsExist.EXIST
-        } else if (result == 0){
-            IsExist.NOT_EXIST
-        } else {
-            IsExist.NONE
+        return when (filmsRepositoryDatabase.isExistFilmInDatabase(id)) {
+            1 -> {
+                IsExist.EXIST
+            }
+            0 -> {
+                IsExist.NOT_EXIST
+            }
+            else -> {
+                IsExist.NONE
+            }
         }
     }
 

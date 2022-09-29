@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorApplicationMain" format="color"/>
+    <attr name="checkedColor" format="color"/>
+    <attr name="uncheckedColor" format="color"/>
+</resources>

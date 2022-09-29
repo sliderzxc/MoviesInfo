@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     packagingOptions {
         resources.excludes.add("META-INF/*")
@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId "com.test.movieapplication"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -43,8 +43,8 @@ android {
 
 dependencies {
     //Basic
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
@@ -71,11 +71,16 @@ dependencies {
     implementation "androidx.paging:paging-runtime-ktx:3.1.1"
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
-    //room
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
+    //Room
     implementation "androidx.room:room-runtime:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"
     implementation "androidx.room:room-ktx:2.4.3"
+    //Color Picker
+    implementation 'com.github.Dhaval2404:ColorPicker:2.3'
+    //Preferences DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation "androidx.datastore:datastore-preferences-core:1.0.0"
     //Unit tests
     implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     implementation 'org.mockito:mockito-core:4.0.0'

@@ -1,9 +1,9 @@
 package com.test.movieapplication.di.modules
 
 import com.test.movieapplication.network.api.FilmApi
-import com.test.movieapplication.paging.FilmsRepositoryPaging
 import com.test.movieapplication.network.repository.FilmsRepository
-import com.test.movieapplication.utils.other.Constants.BASE_URL
+import com.test.movieapplication.paging.repository.FilmsRepositoryPaging
+import com.test.movieapplication.utils.other.MainConstants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

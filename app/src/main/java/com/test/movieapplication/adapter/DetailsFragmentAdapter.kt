@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.test.movieapplication.R
 import com.test.movieapplication.databinding.ItemFilmForFavoriteBinding
 import com.test.movieapplication.network.model.Result
-import com.test.movieapplication.utils.other.Constants
+import com.test.movieapplication.utils.other.MainConstants
 
 class ToDoDiffUtilsStart(
     private val oldList: List<Result>,
@@ -46,7 +46,7 @@ class DetailsFragmentAdapter(
         fun bind(result: Result, onClickItem: (Result) -> Unit) {
             binding.title.text = result.title
             binding.date.text = result.release_date
-            Glide.with(binding.root).load("${Constants.IMAGE_BASE_URL}${result.poster_path}").into(binding.image)
+            Glide.with(binding.root).load("${MainConstants.IMAGE_BASE_URL}${result.poster_path}").into(binding.image)
             binding.root.setOnClickListener { onClickItem(result) }
         }
     }

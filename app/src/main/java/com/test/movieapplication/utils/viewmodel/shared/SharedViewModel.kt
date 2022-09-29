@@ -1,4 +1,4 @@
-package com.test.movieapplication.utils.viewmodel
+package com.test.movieapplication.utils.viewmodel.shared
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

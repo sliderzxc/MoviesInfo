@@ -7,7 +7,6 @@ fun Result.toResultDatabaseModel() : ResultDatabaseModel {
     return ResultDatabaseModel(
         adult = this.adult,
         backdrop_path = this.backdrop_path,
-//        genre_ids = this.genre_ids,
         id = this.id,
         original_language = this.original_language,
         original_title = this.original_title,
@@ -26,7 +25,6 @@ fun ResultDatabaseModel.toResult() : Result {
     return Result(
         adult = this.adult,
         backdrop_path = this.backdrop_path,
-//        genre_ids = this.genre_ids,
         id = this.id,
         original_language = this.original_language,
         original_title = this.original_title,

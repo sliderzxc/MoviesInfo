@@ -19,7 +19,8 @@
         app:layout_constraintDimensionRatio="W,2:3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/app_name" />
 
     <TextView
         android:id="@+id/title"
@@ -27,13 +28,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/black_dark"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/image"
         app:layout_constraintStart_toStartOf="@+id/image"
         app:layout_constraintTop_toBottomOf="@+id/image"
-        tools:text="Hello" />
+        tools:text="@string/example_title" />
 
     <TextView
         android:id="@+id/date"
@@ -42,7 +43,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="20 мая 2022"
+        android:text="@string/example_date"
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"

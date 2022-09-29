@@ -5,14 +5,14 @@
     android:id="@+id/constraintLayoutSplash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_200"
+    android:background="?attr/colorApplicationMain"
     tools:context=".screens.activity.splash.SplashActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewApp"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/icon_app_without_background"
+        android:src="@drawable/icon_app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

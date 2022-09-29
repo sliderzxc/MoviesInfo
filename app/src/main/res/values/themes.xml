@@ -1,19 +1,107 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.MovieApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
+    <style name="Theme.MovieApplication.Main" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/teal_200</item>
         <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- I turn off Status Bar -->
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/teal_200</item>
+        <item name="colorApplicationMain">@color/teal_200</item>
+        <item name="checkedColor">@color/teal_200</item>
+        <item name="uncheckedColor">@color/gray</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.MovieApplication.Green" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/green</item>
+        <item name="colorApplicationMain">@color/green</item>
+        <item name="checkedColor">@color/green</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Purple" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/purple</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/purple</item>
+        <item name="colorApplicationMain">@color/purple</item>
+        <item name="checkedColor">@color/purple</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Cobalt" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/cobalt</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/cobalt</item>
+        <item name="colorApplicationMain">@color/cobalt</item>
+        <item name="checkedColor">@color/cobalt</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Scarlet" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/scarlet</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/scarlet</item>
+        <item name="colorApplicationMain">@color/scarlet</item>
+        <item name="checkedColor">@color/scarlet</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.DeepYellow" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/deep_yellow</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/deep_yellow</item>
+        <item name="colorApplicationMain">@color/deep_yellow</item>
+        <item name="checkedColor">@color/deep_yellow</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.SignalOrange" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/signal_orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/signal_orange</item>
+        <item name="colorApplicationMain">@color/signal_orange</item>
+        <item name="checkedColor">@color/signal_orange</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Olive" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/olive</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/olive</item>
+        <item name="colorApplicationMain">@color/olive</item>
+        <item name="checkedColor">@color/olive</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Aqua" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/aqua</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/aqua</item>
+        <item name="colorApplicationMain">@color/aqua</item>
+        <item name="checkedColor">@color/aqua</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Navy" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/navy</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/navy</item>
+        <item name="colorApplicationMain">@color/navy</item>
+        <item name="checkedColor">@color/navy</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Black" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/black</item>
+        <item name="colorApplicationMain">@color/black</item>
+        <item name="checkedColor">@color/black</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
 </resources>

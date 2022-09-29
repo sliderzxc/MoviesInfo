@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -18,9 +17,10 @@ import com.test.movieapplication.databinding.FragmentFavoriteBinding
 import com.test.movieapplication.network.model.Result
 import com.test.movieapplication.screens.fragment.main.MainFragment
 import com.test.movieapplication.screens.fragment.main.MainFragmentDirections
+import com.test.movieapplication.screens.fragment.settings.SettingsFragment
 import com.test.movieapplication.utils.help.changeFragment
 import com.test.movieapplication.utils.mapper.toResult
-import com.test.movieapplication.utils.viewmodel.SharedViewModel
+import com.test.movieapplication.utils.viewmodel.shared.SharedViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -48,8 +48,7 @@ class FavoriteFragment : Fragment() {
         inject()
         initRecyclerViewAndItemAnimator()
         bottomNavigationMenu()
-        getDataForAdapter()
-        checkIfFavoriteFragmentIsEmpty()
+        getDataForAdapterAndCheckIfFragmentIsEmpty()
     }
 
     private fun initRecyclerViewAndItemAnimator() {
@@ -65,22 +64,17 @@ class FavoriteFragment : Fragment() {
         (activity?.applicationContext as App).appComponent.inject(this)
     }
 
-    private fun getDataForAdapter() {
+    private fun getDataForAdapterAndCheckIfFragmentIsEmpty() {
         lifecycleScope.launch {
             favoriteViewModel.getAllFavoriteFilms().observe(viewLifecycleOwner) { listOfFilms ->
                 detailsFragmentAdapter.setList(
                     listOfFilms.map { resultDatabaseModel -> resultDatabaseModel.toResult() }
                 )
-            }
-        }
-    }
-
-    private fun checkIfFavoriteFragmentIsEmpty() {
-        detailsFragmentAdapter.films.observe(activity as LifecycleOwner) {
-            if (it == 0) {
-                binding.textViewFrgamnetIsEmpty.visibility = View.VISIBLE
-            } else {
-                binding.textViewFrgamnetIsEmpty.visibility = View.GONE
+                if (listOfFilms.isNotEmpty()) {
+                    binding.textViewFrgamnetIsEmpty.visibility = View.GONE
+                } else {
+                    binding.textViewFrgamnetIsEmpty.visibility = View.VISIBLE
+                }
             }
         }
     }
@@ -97,6 +91,10 @@ class FavoriteFragment : Fragment() {
             when(it.itemId) {
                 R.id.mainItem -> {
                     parentFragmentManager.changeFragment(MainFragment())
+                    true
+                }
+                R.id.settingsItem -> {
+                    parentFragmentManager.changeFragment(SettingsFragment())
                     true
                 }
                 else -> false
