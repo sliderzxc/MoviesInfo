@@ -9,4 +9,9 @@
     <string name="example_title">Example Title</string>
     <string name="example_vote">Example Vote</string>
     <string name="retry">Retry</string>
+    <string name="color_settings">Color Settings</string>
+    <string name="about_settings">About</string>
+    <string name="change_color">· Change color</string>
+    <string name="default_color">· Default color</string>
+    <string name="about_the_application">· About the application</string>
 </resources>

@@ -37,7 +37,12 @@ class SettingsFragment : Fragment() {
 
     private fun init() {
         bottomNavigationMenu()
-        binding.defaultButton.setOnClickListener {
+        changeColorButtonListener()
+        defaultColorThemeApplication()
+    }
+
+    private fun changeColorButtonListener() {
+        binding.btnChangeColor.setOnClickListener {
             MaterialColorPickerDialog
                 .Builder(requireActivity())
                 .setColorShape(ColorShape.CIRCLE)
@@ -49,6 +54,14 @@ class SettingsFragment : Fragment() {
                     activity?.recreateSmoothly()
                 }
                 .show()
+        }
+    }
+
+    private fun defaultColorThemeApplication() {
+        binding.btnDefaultColor.setOnClickListener {
+            val theme = R.style.Theme_MovieApplication_Main
+            lifecycleScope.launch { saveData(THEME, theme) }
+            activity?.recreateSmoothly()
         }
     }
 
