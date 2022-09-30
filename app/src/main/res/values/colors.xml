@@ -20,6 +20,11 @@
     <color name="aqua">#00FFFF</color>
     <color name="navy">#000080</color>
     <color name="black">#000000</color>
+    <color name="saddle_brown">#8B4513</color>
+    <color name="green_light">#90EE90</color>
+    <color name="orange">#FFA500</color>
+    <color name="violet">#800080</color>
+    <color name="dark_slate_gray">#2F4F4F</color>
 
     <array name="colorPickerColors">
         <item>@color/green</item>
@@ -32,6 +37,11 @@
         <item>@color/aqua</item>
         <item>@color/navy</item>
         <item>@color/black</item>
+        <item>@color/saddle_brown</item>
+        <item>@color/green_light</item>
+        <item>@color/orange</item>
+        <item>@color/violet</item>
+        <item>@color/dark_slate_gray</item>
     </array>
 
 </resources>

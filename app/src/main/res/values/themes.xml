@@ -104,4 +104,49 @@
         <item name="uncheckedColor">@color/gray</item>
     </style>
 
+    <style name="Theme.MovieApplication.SaddleBrown" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/saddle_brown</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/saddle_brown</item>
+        <item name="colorApplicationMain">@color/saddle_brown</item>
+        <item name="checkedColor">@color/saddle_brown</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.GreenLight" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/green_light</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/green_light</item>
+        <item name="colorApplicationMain">@color/green_light</item>
+        <item name="checkedColor">@color/green_light</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Orange" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/orange</item>
+        <item name="colorApplicationMain">@color/orange</item>
+        <item name="checkedColor">@color/orange</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.Violet" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/violet</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/violet</item>
+        <item name="colorApplicationMain">@color/violet</item>
+        <item name="checkedColor">@color/violet</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
+    <style name="Theme.MovieApplication.DarkSlateGray" parent="Theme.MovieApplication.Main">
+        <item name="colorSecondary">@color/dark_slate_gray</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor" >@color/dark_slate_gray</item>
+        <item name="colorApplicationMain">@color/dark_slate_gray</item>
+        <item name="checkedColor">@color/dark_slate_gray</item>
+        <item name="uncheckedColor">@color/gray</item>
+    </style>
+
 </resources>
