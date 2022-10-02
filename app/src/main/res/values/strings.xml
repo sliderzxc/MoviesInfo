@@ -14,4 +14,5 @@
     <string name="change_color">· Change color</string>
     <string name="default_color">· Default color</string>
     <string name="about_the_application">· About the application</string>
+    <string name="created_by">Created by Vadim</string>
 </resources>

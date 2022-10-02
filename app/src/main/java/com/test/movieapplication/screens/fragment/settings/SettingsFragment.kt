@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
 import com.github.dhaval2404.colorpicker.model.ColorSwatch
@@ -15,6 +16,7 @@ import com.test.movieapplication.R
 import com.test.movieapplication.databinding.FragmentSettingsBinding
 import com.test.movieapplication.screens.fragment.favorite.FavoriteFragment
 import com.test.movieapplication.screens.fragment.main.MainFragment
+import com.test.movieapplication.screens.fragment.main.MainFragmentDirections
 import com.test.movieapplication.utils.context.dataStore
 import com.test.movieapplication.utils.help.changeFragment
 import com.test.movieapplication.utils.help.recreateSmoothly
@@ -39,6 +41,7 @@ class SettingsFragment : Fragment() {
         bottomNavigationMenu()
         changeColorButtonListener()
         defaultColorThemeApplication()
+        goToAboutFragmentButtonListener()
     }
 
     private fun changeColorButtonListener() {
@@ -54,6 +57,13 @@ class SettingsFragment : Fragment() {
                     activity?.recreateSmoothly()
                 }
                 .show()
+        }
+    }
+
+    private fun goToAboutFragmentButtonListener() {
+        binding.btnAboutTheApplication.setOnClickListener {
+            val direction = MainFragmentDirections.actionFromMainFragmentToAboutFragment()
+            findNavController().navigate(direction)
         }
     }
 
