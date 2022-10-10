@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.test.movieapplication.utils.context.dataStoreSettings
+import com.test.movieapplication.utils.help.dataStoreSettings
 import kotlinx.coroutines.flow.first
 
 suspend fun saveThemeToDataStore(key: String, value: Int, context: Context?) {

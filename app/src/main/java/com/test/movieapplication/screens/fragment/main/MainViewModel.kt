@@ -8,7 +8,5 @@ import com.test.movieapplication.paging.repository.FilmsRepositoryPaging
 class MainViewModel(
     filmRepositoryPaging: FilmsRepositoryPaging
 ) : ViewModel() {
-
     var list = filmRepositoryPaging.getFilms().cachedIn(viewModelScope)
-
 }

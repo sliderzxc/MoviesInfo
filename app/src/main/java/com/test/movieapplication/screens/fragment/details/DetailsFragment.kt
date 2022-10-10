@@ -4,24 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.test.movieapplication.R
 import com.test.movieapplication.app.App
 import com.test.movieapplication.databinding.FragmentDetailsBinding
 import com.test.movieapplication.network.model.Result
-import com.test.movieapplication.utils.mapper.toResultDatabaseModel
-import com.test.movieapplication.utils.other.IsExist
 import com.test.movieapplication.utils.other.MainConstants
 import com.test.movieapplication.utils.viewmodel.shared.SharedViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class DetailsFragment : Fragment() {
@@ -44,13 +36,17 @@ class DetailsFragment : Fragment() {
 
     private fun init() {
         inject()
-        sharedViewModel.result.observe(activity as LifecycleOwner) { result ->
-            getResultAndBindToDetailsFragment(result = result)
-        }
+        observeResultInSharedViewModel()
         isFilmExistInDatabase()
         onClickButtonFavoriteListener()
         onClickPoster()
         onBackButtonClickListener()
+    }
+
+    private fun observeResultInSharedViewModel() {
+        sharedViewModel.result.observe(activity as LifecycleOwner) { result ->
+            getResultAndBindToDetailsFragment(result = result)
+        }
     }
 
     private fun inject() {
@@ -71,27 +67,7 @@ class DetailsFragment : Fragment() {
 
     private fun isFilmExistInDatabase() {
         sharedViewModel.result.value?.id?.let { id ->
-            lifecycleScope.launch {
-                when (detailsViewModel.isFilmsExistInDatabase(id)) {
-                    IsExist.EXIST -> {
-                        withContext(Dispatchers.Main) {
-                            binding.btnAddFilmToFavorite.setImageDrawable(
-                                context?.let { context -> ContextCompat.getDrawable(context, R.drawable.icon_like) }
-                            )
-                            detailsViewModel.changeStateIsChecked(true)
-                        }
-                    }
-                    IsExist.NOT_EXIST -> {
-                        withContext(Dispatchers.Main) {
-                            binding.btnAddFilmToFavorite.setImageDrawable(
-                                context?.let { context -> ContextCompat.getDrawable(context, R.drawable.icon_unlike) }
-                            )
-                            detailsViewModel.changeStateIsChecked(false)
-                        }
-                    }
-                    IsExist.NONE -> { throw Exception("None in Details Fragmentw") }
-                }
-            }
+            detailsViewModel.isFilmExistInDatabase(id, binding, context)
         }
     }
 
@@ -110,19 +86,7 @@ class DetailsFragment : Fragment() {
 
     private fun onClickButtonFavoriteListener() {
         binding.btnAddFilmToFavorite.setOnClickListener {
-            if (detailsViewModel.stateIsChecked.value == false) {
-                binding.btnAddFilmToFavorite.setImageDrawable(
-                    context?.let { context -> ContextCompat.getDrawable(context, R.drawable.icon_like) }
-                )
-                detailsViewModel.changeStateIsChecked(true)
-                detailsViewModel.insertToFavoriteTable(resultDatabaseModel = sharedViewModel.result.value?.toResultDatabaseModel() ?: throw Exception())
-            } else {
-                binding.btnAddFilmToFavorite.setImageDrawable(
-                    context?.let { context -> ContextCompat.getDrawable(context, R.drawable.icon_unlike) }
-                )
-                detailsViewModel.changeStateIsChecked(false)
-                detailsViewModel.deleteFromFavoriteTable(resultDatabaseModel = sharedViewModel.result.value?.toResultDatabaseModel() ?: throw Exception())
-            }
+            detailsViewModel.onClickButtonFavoriteListener(binding, context, sharedViewModel)
         }
     }
 
