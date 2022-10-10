@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="created_by">Создано Вадимом</string>
+    <string name="default_color">· Базовый цвет</string>
+    <string name="change_color">· Изменить цвет</string>
+    <string name="about_settings">О приложении</string>
+    <string name="about_the_application">· О приложении</string>
+    <string name="retry">Повторить</string>
+    <string name="color_settings">Настройки цвета</string>
+    <string name="example_vote">Пример Оценки</string>
+    <string name="example_title">Пример Названия</string>
+    <string name="example_date">Пример Даты</string>
+    <string name="about">О приложении</string>
+    <string name="settings">Настройки</string>
+    <string name="favorite">Любимые</string>
+    <string name="main">Главная</string>
+    <string name="favorite_movies_fragment_is_empty">У тебя нету любимых фильмов</string>
+    <string name="language_settings">Настройки языка</string>
+    <string name="change_language">· Сменить язык</string>
+    <string name="choose_language">Выбрать язык</string>
+    <string name="default_language">· Базовый язык</string>
+</resources>

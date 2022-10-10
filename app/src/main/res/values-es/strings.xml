@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favorite_movies_fragment_is_empty">¿Tienes alguna película favorita?</string>
+    <string name="main">Hogar</string>
+    <string name="favorite">Favorito</string>
+    <string name="settings">Ajustes</string>
+    <string name="about">Acerca de la aplicación</string>
+    <string name="example_date">Ejemplo de fecha</string>
+    <string name="example_title">Ejemplo de título</string>
+    <string name="example_vote">Ejemplo de evaluación</string>
+    <string name="retry">Repetir</string>
+    <string name="color_settings">Ajustes de color</string>
+    <string name="about_settings">Acerca de la aplicación</string>
+    <string name="change_color">· Cambiar el color</string>
+    <string name="default_color">· Color de base</string>
+    <string name="about_the_application">· Acerca de la aplicación</string>
+    <string name="created_by">Creada por Vadim</string>
+    <string name="language_settings">Ajustes de idioma</string>
+    <string name="change_language">· Cambiar idioma</string>
+    <string name="choose_language">Seleccione el idioma</string>
+    <string name="default_language">· Idioma base</string>
+</resources>

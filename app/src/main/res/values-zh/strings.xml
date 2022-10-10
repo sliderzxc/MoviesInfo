@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favorite_movies_fragment_is_empty">你沒有最喜歡的電影</string>
+    <string name="main">主要的</string>
+    <string name="favorite">最喜歡的</string>
+    <string name="settings">設置</string>
+    <string name="about">關於</string>
+    <string name="example_date">示例日期</string>
+    <string name="example_title">示例標題</string>
+    <string name="example_vote">示例投票</string>
+    <string name="retry">重試</string>
+    <string name="color_settings">顏色設置</string>
+    <string name="about_settings">關於</string>
+    <string name="change_color">· 換顏色</string>
+    <string name="default_color">· 默認顏色</string>
+    <string name="about_the_application">· 關於申請</string>
+    <string name="created_by">由 Vadim 創建</string>
+    <string name="language_settings">語言設定</string>
+    <string name="change_language">· 改變語言</string>
+    <string name="choose_language">選擇語言</string>
+    <string name="default_language">· 默認語言</string>
+</resources>

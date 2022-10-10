@@ -4,8 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -17,10 +16,15 @@ import com.test.movieapplication.databinding.FragmentSettingsBinding
 import com.test.movieapplication.screens.fragment.favorite.FavoriteFragment
 import com.test.movieapplication.screens.fragment.main.MainFragment
 import com.test.movieapplication.screens.fragment.main.MainFragmentDirections
-import com.test.movieapplication.utils.context.dataStore
+import com.test.movieapplication.utils.datastore.saveLanguageToDataStore
+import com.test.movieapplication.utils.datastore.saveThemeToDataStore
 import com.test.movieapplication.utils.help.changeFragment
 import com.test.movieapplication.utils.help.recreateSmoothly
+import com.test.movieapplication.utils.other.MainConstants.ENGLISH_CODE
+import com.test.movieapplication.utils.other.MainConstants.LANGUAGE
 import com.test.movieapplication.utils.other.MainConstants.THEME
+import com.test.movieapplication.utils.other.MainConstants.arrayOfLanguageCodes
+import com.test.movieapplication.utils.other.MainConstants.arrayOfLanguages
 import com.test.movieapplication.utils.settings.color.checkWhichThemeIsChecked
 import kotlinx.coroutines.launch
 
@@ -40,8 +44,32 @@ class SettingsFragment : Fragment() {
     private fun init() {
         bottomNavigationMenu()
         changeColorButtonListener()
-        defaultColorThemeApplication()
+        defaultColorThemeApplicationButtonListener()
         goToAboutFragmentButtonListener()
+        changeLanguageButtonListener()
+        defaultLanguageButtonListener()
+    }
+
+    private fun changeLanguageButtonListener() {
+        binding.btnChangeLanguage.setOnClickListener {
+            context?.let { context ->
+                AlertDialog.Builder(context)
+                    .setTitle(R.string.choose_language)
+                    .setItems(arrayOfLanguages) { _, position ->
+                        lifecycleScope.launch { saveLanguageToDataStore(LANGUAGE, arrayOfLanguageCodes[position], context) }
+                        activity?.recreateSmoothly()
+                    }
+                    .show()
+            }
+        }
+    }
+
+    private fun defaultColorThemeApplicationButtonListener() {
+        binding.btnDefaultColor.setOnClickListener {
+            val theme = R.style.Theme_MovieApplication_Main
+            lifecycleScope.launch { saveThemeToDataStore(THEME, theme, context) }
+            activity?.recreateSmoothly()
+        }
     }
 
     private fun changeColorButtonListener() {
@@ -53,7 +81,7 @@ class SettingsFragment : Fragment() {
                 .setColorRes(resources.getIntArray(R.array.colorPickerColors))
                 .setColorListener { color, _ ->
                     val theme = checkWhichThemeIsChecked(color)
-                    lifecycleScope.launch { saveData(THEME, theme) }
+                    lifecycleScope.launch { saveThemeToDataStore(THEME, theme, context) }
                     activity?.recreateSmoothly()
                 }
                 .show()
@@ -67,10 +95,9 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    private fun defaultColorThemeApplication() {
-        binding.btnDefaultColor.setOnClickListener {
-            val theme = R.style.Theme_MovieApplication_Main
-            lifecycleScope.launch { saveData(THEME, theme) }
+    private fun defaultLanguageButtonListener() {
+        binding.btnDefaultLanguage.setOnClickListener {
+            lifecycleScope.launch { saveLanguageToDataStore(LANGUAGE, ENGLISH_CODE, context) }
             activity?.recreateSmoothly()
         }
     }
@@ -91,12 +118,4 @@ class SettingsFragment : Fragment() {
             }
         }
     }
-
-    private suspend fun saveData(key: String, value: Int) {
-        val dataStoreKey = intPreferencesKey(key)
-        context?.dataStore?.edit { settings ->
-            settings[dataStoreKey] = value
-        }
-    }
-
 }

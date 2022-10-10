@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favorite_movies_fragment_is_empty">Vous n\'avez pas de films préférés</string>
+    <string name="main">Principal</string>
+    <string name="favorite">Favori</string>
+    <string name="settings">Réglages</string>
+    <string name="about">À propos de</string>
+    <string name="about_settings">À propos de</string>
+    <string name="example_date">Exemple de date</string>
+    <string name="example_title">Exemple de titre</string>
+    <string name="example_vote">Exemple de vote</string>
+    <string name="retry">Recommencez</string>
+    <string name="color_settings">Paramètres de couleur</string>
+    <string name="change_color">· Changer de couleur</string>
+    <string name="default_color">· Couleur par défaut</string>
+    <string name="about_the_application">· À propos de la candidature</string>
+    <string name="created_by">Créée par Vadim</string>
+    <string name="language_settings">Paramètres de langue</string>
+    <string name="change_language">· Changer de langue</string>
+    <string name="choose_language">Choisissez la langue</string>
+    <string name="default_language">· Default language</string>
+</resources>

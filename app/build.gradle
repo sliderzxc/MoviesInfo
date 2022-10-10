@@ -81,6 +81,8 @@ dependencies {
     //Preferences DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation "androidx.datastore:datastore-preferences-core:1.0.0"
+    //Translate
+    implementation 'com.github.iammannan:TranslateAPI:1.1'
     //Unit tests
     implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     implementation 'org.mockito:mockito-core:4.0.0'

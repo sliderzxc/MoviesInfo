@@ -26,6 +26,21 @@ class AboutFragment : Fragment() {
     }
 
     private fun init() {
+//        val translateAPI = TranslateAPI(
+//            Language.AUTO_DETECT,
+//            Language.UKRAINIAN,
+//            "Your Text"
+//        )
+//        translateAPI.setTranslateListener(object : TranslateListener {
+//            override fun onSuccess(translatedText: String) {
+//                Log.d("MyLog", "onSuccess: $translatedText")
+//            }
+//
+//            override fun onFailure(ErrorText: String) {
+//                Log.d("MyLog", "onFailure: $ErrorText")
+//            }
+//        })
+
         initTextViewScrollable()
         onBackButtonClickListener()
         buttonInstagramClickListener()
