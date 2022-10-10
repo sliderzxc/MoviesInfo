@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.test.movieapplication.app.App
 import com.test.movieapplication.databinding.FragmentAboutBinding
 
 
@@ -40,12 +41,16 @@ class AboutFragment : Fragment() {
 //                Log.d("MyLog", "onFailure: $ErrorText")
 //            }
 //        })
-
+        inject()
         initTextViewScrollable()
         onBackButtonClickListener()
         buttonInstagramClickListener()
         buttonTwitterClickListener()
         buttonTelegramClickListener()
+    }
+
+    private fun inject() {
+        (activity?.applicationContext as App).appComponent.inject(this)
     }
 
     private fun initTextViewScrollable() {

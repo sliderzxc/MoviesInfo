@@ -12,6 +12,7 @@ import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
 import com.github.dhaval2404.colorpicker.model.ColorSwatch
 import com.test.movieapplication.R
+import com.test.movieapplication.app.App
 import com.test.movieapplication.databinding.FragmentSettingsBinding
 import com.test.movieapplication.screens.fragment.favorite.FavoriteFragment
 import com.test.movieapplication.screens.fragment.main.MainFragment
@@ -42,12 +43,17 @@ class SettingsFragment : Fragment() {
     }
 
     private fun init() {
+        inject()
         bottomNavigationMenu()
         changeColorButtonListener()
         defaultColorThemeApplicationButtonListener()
         goToAboutFragmentButtonListener()
         changeLanguageButtonListener()
         defaultLanguageButtonListener()
+    }
+
+    private fun inject() {
+        (activity?.applicationContext as App).appComponent.inject(this)
     }
 
     private fun changeLanguageButtonListener() {

@@ -29,12 +29,12 @@ class ImageFragment : Fragment() {
     }
 
     private fun init() {
-        initViewModelAndInject()
+        inject()
         onBackButtonClickListener()
         sharedViewModel.result.value?.let { getResultFromSharedViewModel(it) }
     }
 
-    private fun initViewModelAndInject() {
+    private fun inject() {
         (activity?.applicationContext as App).appComponent.inject(this)
     }
 
