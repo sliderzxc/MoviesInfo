@@ -20,4 +20,6 @@
     <string name="change_language">· Change language</string>
     <string name="choose_language">Choose language</string>
     <string name="default_language">· Default language</string>
+    <string name="connection_lost">Connection Lost!</string>
+    <string name="connection_lost_info">Oops.. Please check your internet connection</string>
 </resources>
