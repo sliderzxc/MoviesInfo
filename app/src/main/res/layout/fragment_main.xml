@@ -7,6 +7,14 @@
     android:background="#FFFFFF"
     tools:context=".screens.fragment.main.MainFragment">
 
+    <include
+        android:id="@+id/connectionLost"
+        layout="@layout/connection_lost_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"

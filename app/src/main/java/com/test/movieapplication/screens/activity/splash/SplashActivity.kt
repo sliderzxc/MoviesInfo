@@ -4,16 +4,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.lifecycle.lifecycleScope
 import com.test.movieapplication.databinding.ActivitySplashBinding
 import com.test.movieapplication.screens.activity.main.MainActivity
-import com.test.movieapplication.utils.context.dataStoreSettings
 import com.test.movieapplication.utils.datastore.getThemeFromDataStore
-import com.test.movieapplication.utils.other.MainConstants
 import com.test.movieapplication.utils.other.MainConstants.THEME
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 @SuppressLint("CustomSplashScreen")

@@ -13,6 +13,7 @@ import com.test.movieapplication.R
 import com.test.movieapplication.adapter.FooterAdapter
 import com.test.movieapplication.app.App
 import com.test.movieapplication.databinding.FragmentMainBinding
+import com.test.movieapplication.network.connection.NetworkConnection
 import com.test.movieapplication.network.model.Result
 import com.test.movieapplication.paging.adapter.FilmsPagingAdapter
 import com.test.movieapplication.screens.fragment.favorite.FavoriteFragment
@@ -45,10 +46,18 @@ class MainFragment : Fragment() {
         initRecyclerView()
         observeForRecyclerView()
         bottomNavigationMenu()
+        observeInternetConnection()
     }
 
     private fun inject() {
         (activity?.applicationContext as App).appComponent.inject(this)
+    }
+
+    private fun observeInternetConnection() {
+        val networkConnection = activity?.applicationContext?.let { NetworkConnection(it) }
+        networkConnection?.observe(viewLifecycleOwner) { isConnected ->
+            mainViewModel.observeInternetConnection(isConnected, binding)
+        }
     }
 
     private fun initRecyclerView() {
