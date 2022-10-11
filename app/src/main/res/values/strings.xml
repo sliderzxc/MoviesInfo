@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">MovieApplication</string>
+    <string name="app_name" translatable="false">Movies Info</string>
     <string name="favorite_movies_fragment_is_empty">You don\'t have favorite movies</string>
     <string name="main">Main</string>
     <string name="favorite">Favorite</string>
