@@ -28,4 +28,5 @@ class MainViewModel(
             binding.connectionLost.tvConnectionLostInfo.visibility = View.VISIBLE
         }
     }
+
 }
