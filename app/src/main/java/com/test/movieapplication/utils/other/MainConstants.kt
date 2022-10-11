@@ -8,6 +8,7 @@ object MainConstants {
     const val MAX_PAGE_SIZE = 5
     const val THEME = "THEME"
     const val LANGUAGE = "LANGUAGE"
+    const val IS_FIRST_TIME_STARTED = "IS_FIRST_TIME_STARTED"
     //Language Codes
     const val ENGLISH_CODE = "en"
     const val SPANISH_CODE = "es"
